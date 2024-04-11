@@ -18,18 +18,19 @@ import dto.User;
 public class SaveUser extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id=Integer.parseInt(req.getParameter("id"));
+		
 		String name=req.getParameter("name");
 		String email=req.getParameter("email");
 		long contact=Long.parseLong(req.getParameter("contact"));
 		String password=req.getParameter("password");
 		Part imagePart=req.getPart("image");
 		byte[] imageByte=imagePart.getInputStream().readAllBytes();
-		User user=new User(id,name,email,contact,password,imageByte);
+		User user;
 		
 		Dao dao=new Dao();
 		
 		try {
+			 user=new User(dao.getUserId(),name,email,contact,password,imageByte);
 			int res = dao.saveUser(user);
 			if(res>0)
 			{
