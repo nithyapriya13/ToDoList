@@ -6,18 +6,15 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style >
+
 body{
-margin:0%;
-padding:0px;
-}
-#btn-color{
 background-image:url('asset/background todo.jpg');
 background-position:cover;
 background-repeat:no-repeat;
 
 background-size:100% 100%;
-height:100vh;
-}
+ height:100vh;
+ }
 #img-content{
 display:flex;
 justify-content:center;
@@ -26,7 +23,7 @@ justify-content:center;
 h2{
  text-align: center; 
  font-size: 30px;
- padding-top: 7px;
+ 
  font-family: 'Times New Roman', Times, serif;
 }
 h2::before{
